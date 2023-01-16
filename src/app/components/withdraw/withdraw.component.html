@@ -1,0 +1,14 @@
+<form class="withdraw-form">
+    <mat-form-field class="withdraw-form-fields">
+        <mat-label>Withdraw Amount</mat-label>
+        <input type="number" matInput [formControl]="withdrawAmountControl"
+                placeholder="1">
+        <mat-hint> Allowed bills are 1, 5, 10, 20, 50 , and 100 </mat-hint>
+        <mat-error *ngIf="withdrawAmountControl.hasError('pattern') && !withdrawAmountControl.hasError('required')">
+            Please enter a valid amount.
+        </mat-error>
+        <mat-error *ngIf="withdrawAmountControl.hasError('required')">
+            Amount is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+</form>

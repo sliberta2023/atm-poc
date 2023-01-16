@@ -1,0 +1,77 @@
+<div class="container">
+    <header class="header">
+        <p>
+            <mat-toolbar color="primary">
+              <button mat-icon-button aria-label="menu icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+              <span class="toolbar-title">ATM Simulator </span>
+              <span class="menu-spacer"></span>
+              <button mat-icon-button aria-label="favorite icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="share icon">
+                <mat-icon>share</mat-icon>
+              </button>
+            </mat-toolbar>
+          </p>
+    </header>
+    <main class="main">
+        <div class="main-content">
+            <div class="display">
+                <mat-card>
+                    <mat-card-header>
+                        <div class="card-title">
+                            <mat-icon>account_balance</mat-icon>
+                        </div>
+                    </mat-card-header>
+                    <mat-card-content>
+                        
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                          
+                            <ng-container matColumnDef="billType">
+                              <th mat-header-cell *matHeaderCellDef> Bill Type </th>
+                              <td mat-cell *matCellDef="let element"> {{element.billType}} </td>
+                            </ng-container>
+                          
+                            <ng-container matColumnDef="amount">
+                              <th mat-header-cell *matHeaderCellDef> Amount </th>
+                              <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+                            </ng-container>
+                          
+                            <ng-container matColumnDef="total">
+                              <th mat-header-cell *matHeaderCellDef> Total </th>
+                              <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                            </ng-container>
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          </table>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="actions">
+                <div class="action-button-left">
+                    <button mat-icon-button aria-label="restock icon">
+                        <div class="button-text">
+                            <mat-icon class="icon-restock">savings</mat-icon>
+                            <span class="text-restock">Restock</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="action-button-right">
+                    <button mat-icon-button aria-label="withdraw icon">
+                        <div class="button-text">
+                            <mat-icon class="icon-withdraw">takeout_dining</mat-icon>
+                            <span class="text-withdraw">Withdraw</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        Beta Nxt &copy; 2023
+    </footer>
+</div>
