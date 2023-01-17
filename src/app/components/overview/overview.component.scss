@@ -1,17 +1,17 @@
-.header {
-    min-height: 10vh;
-}
-
 .main {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    margin: 0 2rem;
-    min-height: 80vh;
 }
 
-.main::before {
+.overview-content {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: fit-content;
+    min-height: 60vh;
+}
+
+.overview-content::before {
     content: '';
     display: block;
     position: absolute;
@@ -24,18 +24,7 @@
     background-position: 50% 0;
     background-size: cover;
     opacity: 0.2;
-}
-
-.main-content {
-    position: relative;
-    border: 1px solid black;
     border-radius: 1rem;
-    // min-width: 60%;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .display {
@@ -59,18 +48,21 @@
 }
 
 .actions {
+    position: relative;
     display: flex;
     justify-content: space-around;
-    min-height: 40%;
-    margin-bottom: 2rem;
+    // min-height: 40%;
+    margin: 2rem 0;
 }
 
 .action-button-left {
     margin-right: 1rem;
+    border-radius: 1rem;
 }
 
 .action-button-right {
     margin-left: 1rem;
+    border-radius: 1rem;
 }
 
 .button-text {
@@ -82,30 +74,7 @@
 .text-restock, .text-withdraw {
     text-transform: uppercase;
     font-weight: bold;
-    padding: 1rem;
-}
-
-.footer {
-    min-height: 10vh;
-    padding-top: 5vh;
-    text-align: center;
-}
-
-.menu-spacer {
-    flex: 1 1 auto;
-}
-
-.bill-spacer {
-    flex: 1 1 auto;
-}
-
-.bill-type, .bill-amount {
-    min-width: 4rem;
-}
-
-.toolbar-title {
-    text-transform: uppercase;
-    padding-left:10px;
+    padding: 1rem 0.5rem;
 }
 
 .mat-card-header {
@@ -114,5 +83,7 @@
 }
 
 table.mat-table {
-    min-width: 25rem;
+    min-width: 20rem;
+    min-height: 50vh;
+    font-weight: bold;
 }

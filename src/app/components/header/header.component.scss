@@ -1,0 +1,21 @@
+.header {
+    min-height: 10vh;
+}
+
+.menu-spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-title {
+    text-transform: uppercase;
+    padding-left:10px;
+}
+
+.toolbar-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.toolbar-icon {
+    margin: 5px;
+}

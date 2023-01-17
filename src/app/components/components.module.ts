@@ -8,6 +8,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { RestockComponent } from "./restock/restock.component";
 import { WithdrawComponent } from "./withdraw/withdraw.component";
 import { MaterialSharedModule } from "../materials.module";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const components = [
     PageNotFoundComponent,
@@ -18,7 +20,9 @@ const components = [
 
 @NgModule({
     declarations: [
-        ...components
+        ...components,
+        HeaderComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,

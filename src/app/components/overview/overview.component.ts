@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BillType } from 'src/app/models/bill-type';
 import { AtmService } from 'src/app/services/atm.service';
 
@@ -16,7 +17,8 @@ interface MoneyUnit {
 export class OverviewComponent implements OnInit {
   displayedColumns: string[] = ['billType', 'amount', 'total' ];
   dataSource: MoneyUnit[] = [];
-  constructor(private readonly atmService: AtmService) { }
+  constructor(private readonly atmService: AtmService,
+    private readonly router: Router) { }
 
   ngOnInit(): void {
     this.dataSource = this.getDataSource();
@@ -45,6 +47,16 @@ export class OverviewComponent implements OnInit {
     })
 
     return dataSource;
+  }
+
+  onRestock(): void {
+    console.log('Restocking...');
+    this.router.navigate(['./restock']);
+  }
+
+  onWithdraw(): void {
+    console.log('Withdrawing...');
+    this.router.navigate(['./withdraw']);
   }
 
 }

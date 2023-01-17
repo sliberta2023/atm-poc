@@ -1,14 +1,71 @@
-<form class="withdraw-form">
-    <mat-form-field class="withdraw-form-fields">
-        <mat-label>Withdraw Amount</mat-label>
-        <input type="number" matInput [formControl]="withdrawAmountControl"
-                placeholder="1">
-        <mat-hint> Allowed bills are 1, 5, 10, 20, 50 , and 100 </mat-hint>
-        <mat-error *ngIf="withdrawAmountControl.hasError('pattern') && !withdrawAmountControl.hasError('required')">
-            Please enter a valid amount.
-        </mat-error>
-        <mat-error *ngIf="withdrawAmountControl.hasError('required')">
-            Amount is <strong>required</strong>
-        </mat-error>
-    </mat-form-field>
-</form>
+<app-header></app-header>
+<main class="main">
+    <div class="withdraw-content">
+        <div class="withdraw-title">
+            Deposit Form
+        </div>
+        <div class="withdraw-form-wrapper">
+            <form class="withdraw-form" [formGroup]="reserveForm">
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $1 </mat-label>
+                    <input type="number" matInput formControlName="one"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $5 </mat-label>
+                    <input type="number" matInput formControlName="five"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $10 </mat-label>
+                    <input type="number" matInput formControlName="ten"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $20 </mat-label>
+                    <input type="number" matInput formControlName="twenty"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $50 </mat-label>
+                    <input type="number" matInput formControlName="fifty"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="withdraw-form-field">
+                    <mat-label> $100 </mat-label>
+                    <input type="number" matInput formControlName="hundred"
+                            placeholder="1">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="total-amount">
+            <div class="current-amount">
+                <div class="balance-title">
+                    Your balance:
+                </div>
+                <div class="balance-amount">
+                    {{ currentAmount | currency }}
+                </div>
+            </div>
+            <div class="withdraw-amount">
+                <div class="requested-title">
+                    Requested amount:
+                </div>
+                <div class="requested-amount">
+                    {{ withdrawAmount$ | async | currency }}
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button mat-icon-button aria-label="withdraw icon" class="button-back"
+                (click)="onBack()">
+                <span class="text-back">Back</span>
+            </button>
+            <button mat-icon-button aria-label="withdraw icon" class="button-withdraw"
+                (click)="onWithdraw()">
+                <span class="text-deposit">Withdraw</span>
+            </button>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

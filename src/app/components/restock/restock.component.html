@@ -1,1 +1,57 @@
-<p>restock works!</p>
+<app-header></app-header>
+<main class="main">
+    <div class="restock-content">
+        <div class="restock-title">
+            Deposit Form
+        </div>
+        <div class="restock-form-wrapper">
+            <form class="restock-form" [formGroup]="reserveForm">
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $1 </mat-label>
+                    <input type="number" matInput formControlName="one"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $5 </mat-label>
+                    <input type="number" matInput formControlName="five"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $10 </mat-label>
+                    <input type="number" matInput formControlName="ten"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $20 </mat-label>
+                    <input type="number" matInput formControlName="twenty"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $50 </mat-label>
+                    <input type="number" matInput formControlName="fifty"
+                            placeholder="1">
+                </mat-form-field>
+                <mat-form-field class="restock-form-field">
+                    <mat-label> $100 </mat-label>
+                    <input type="number" matInput formControlName="hundred"
+                            placeholder="1">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="total-amount">
+            <span class="total-amount-value">{{ totalAmount$ | async | currency }}</span>
+        </div>
+        <div class="actions">
+            <button mat-icon-button aria-label="restock icon" class="button-back"
+                (click)="onBack()">
+                <span class="text-back">Back</span>
+            </button>
+            <button mat-icon-button aria-label="restock icon" class="button-deposit"
+                (click)="onDeposit()">
+                <span class="text-deposit">Deposit</span>
+            </button>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>
+
