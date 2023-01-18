@@ -8,48 +8,97 @@
             <form class="restock-form" [formGroup]="reserveForm">
                 <mat-form-field class="restock-form-field">
                     <mat-label> $1 </mat-label>
-                    <input type="number" matInput formControlName="one"
+                    <input type="number" matInput [formControl]="formControlOne"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlOne.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlOne.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="restock-form-field">
                     <mat-label> $5 </mat-label>
-                    <input type="number" matInput formControlName="five"
+                    <input type="number" matInput [formControl]="formControlFive"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlFive.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlFive.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="restock-form-field">
                     <mat-label> $10 </mat-label>
-                    <input type="number" matInput formControlName="ten"
+                    <input type="number" matInput [formControl]="formControlTen"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlTen.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlTen.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="restock-form-field">
                     <mat-label> $20 </mat-label>
-                    <input type="number" matInput formControlName="twenty"
+                    <input type="number" matInput [formControl]="formControlTwenty"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlTwenty.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlTwenty.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="restock-form-field">
                     <mat-label> $50 </mat-label>
-                    <input type="number" matInput formControlName="fifty"
+                    <input type="number" matInput [formControl]="formControlFifty"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlFifty.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlFifty.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="restock-form-field">
                     <mat-label> $100 </mat-label>
-                    <input type="number" matInput formControlName="hundred"
+                    <input type="number" matInput [formControl]="formControlHundred"
                             placeholder="1">
+                    <mat-error *ngIf="this.formControlHundred.hasError('min')" class="restock-form-field-error">
+                        {{ errors.min }}
+                    </mat-error>
+                    <mat-error *ngIf="this.formControlHundred.hasError('required')" class="restock-form-field-error">
+                        {{ errors.required }}
+                    </mat-error>
                 </mat-form-field>
             </form>
         </div>
         <div class="total-amount">
-            <span class="total-amount-value">{{ totalAmount$ | async | currency }}</span>
+            <div class="total-amount-text">
+                Total Amount:
+            </div>
+            <div class="total-amount-value">
+                {{ totalAmount$ | async | currency }}
+            </div>
         </div>
         <div class="actions">
-            <button mat-icon-button aria-label="restock icon" class="button-back"
-                (click)="onBack()">
-                <span class="text-back">Back</span>
-            </button>
-            <button mat-icon-button aria-label="restock icon" class="button-deposit"
-                (click)="onDeposit()">
-                <span class="text-deposit">Deposit</span>
-            </button>
+            <div class="action-button-left">
+                <button mat-icon-button aria-label="back icon" (click)="onBack()">
+                    <div class="button-text">
+                        <mat-icon class="icon-back">arrow_back</mat-icon>
+                        <span class="text-back">Back</span>
+                    </div>
+                </button>
+            </div>
+            <div class="action-button-right">
+                <button mat-icon-button aria-label="deposit icon" (click)="onDeposit()">
+                    <div class="button-text">
+                        <mat-icon class="icon-deposit">savings</mat-icon>
+                        <span class="text-deposit">Deposit</span>
+                    </div>
+                </button>
+            </div>
         </div>
     </div>
 </main>

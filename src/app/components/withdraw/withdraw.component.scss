@@ -10,6 +10,7 @@
   border: 1px solid black;
   border-radius: 1rem;
   width: fit-content;
+  min-width: 352px;
   min-height: 60vh;
 }
 
@@ -40,6 +41,8 @@
 
 .withdraw-form-wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .withdraw-form {
@@ -82,4 +85,36 @@
 
 .actions {
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.action-button-left {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+
+.action-button-right {
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+
+.button-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 6rem;
+}
+
+.text-back, .text-withdraw {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 0.5rem;
+}
+
+.button-back, .button-withdraw {
+  min-height: 4rem;
+  min-width: 8rem;
+  margin: 1rem;
 }

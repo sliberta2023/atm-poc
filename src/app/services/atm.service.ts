@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 import { BillType } from "../models/bill-type";
 import { TransactionUnit } from "../models/transaction-unit";
 
@@ -6,24 +7,36 @@ import { TransactionUnit } from "../models/transaction-unit";
     providedIn: "root"
 })
 export class AtmService {
-    private moneyReserve: Map<BillType, number> = new Map();
+    private moneyReserve: Map<number, number> = new Map();
+    private moneyReserve$: BehaviorSubject<Map<number, number>> = new BehaviorSubject(this.moneyReserve);
     
+    public readonly BillTypes: number[] = [1, 5, 10, 20, 50, 100];
     constructor() {
         this.initAtm();
     }
 
     initAtm() {
-        this.moneyReserve.set(BillType.ONE, 10);
-        this.moneyReserve.set(BillType.FIVE, 10);
-        this.moneyReserve.set(BillType.TEN, 10);
-        this.moneyReserve.set(BillType.TWENTY, 10);
-        this.moneyReserve.set(BillType.FIFTY, 10);
-        this.moneyReserve.set(BillType.HUNDRED, 10);
+        this.BillTypes.forEach(billType => {
+            this.moneyReserve.set(billType, 10);
+        });
+        console.log({moneyReserve: this.moneyReserve});
+        this.moneyReserve$.next(this.moneyReserve);
     }
 
     deposit(unit: TransactionUnit): void {
         const amount = this.moneyReserve.get(unit.type) || 0;
         this.moneyReserve.set(unit.type, unit.amount + amount);
+        this.moneyReserve$.next(this.moneyReserve);
+    }
+
+    depositAll(units: TransactionUnit[]): void {
+        console.log({units});
+        let amount = 0;
+        units.forEach(unit => {
+            amount = this.moneyReserve.get(unit.type) || 0;
+            this.moneyReserve.set(unit.type, unit.amount + amount);
+        });
+        this.moneyReserve$.next(this.moneyReserve);
     }
 
     getAmount(billType: BillType): number {
@@ -40,6 +53,12 @@ export class AtmService {
             return requestedAmount;
         }
 
+        this.moneyReserve$.next(this.moneyReserve);
+
         return 0;
+    }
+
+    getMoneyReserve(): Observable<Map<BillType, number>> {
+        return this.moneyReserve$.asObservable();
     }
 }

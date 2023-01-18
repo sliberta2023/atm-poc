@@ -87,3 +87,21 @@ table.mat-table {
     min-height: 50vh;
     font-weight: bold;
 }
+
+.current-balance {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    min-height: 2rem;
+    margin-top: 1rem;
+}
+
+.balance-title {
+    align-items: center;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.balance-amount {
+    padding: 1rem 0;
+}

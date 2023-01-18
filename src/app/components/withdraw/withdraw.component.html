@@ -57,14 +57,22 @@
             </div>
         </div>
         <div class="actions">
-            <button mat-icon-button aria-label="withdraw icon" class="button-back"
-                (click)="onBack()">
-                <span class="text-back">Back</span>
-            </button>
-            <button mat-icon-button aria-label="withdraw icon" class="button-withdraw"
-                (click)="onWithdraw()">
-                <span class="text-deposit">Withdraw</span>
-            </button>
+            <div class="action-button-left">
+                <button mat-icon-button aria-label="back icon" (click)="onBack()">
+                    <div class="button-text">
+                        <mat-icon class="icon-back">arrow_back</mat-icon>
+                        <span class="text-back">Back</span>
+                    </div>
+                </button>
+            </div>
+            <div class="action-button-right">
+                <button mat-icon-button aria-label="withdraw icon" (click)="onWithdraw()">
+                    <div class="button-text">
+                        <mat-icon class="icon-withdraw">takeout_dining</mat-icon>
+                        <span class="text-withdraw">Withdraw</span>
+                    </div>
+                </button>
+            </div>
         </div>
     </div>
 </main>

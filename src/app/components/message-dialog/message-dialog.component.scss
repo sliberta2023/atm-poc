@@ -1,0 +1,45 @@
+.dialog {
+    min-width: 20rem;
+}
+
+.dialog-title {
+    min-height: 2rem;
+    border-bottom: 1px solid lightgray;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dialog-message {
+    min-height:4rem;
+    margin: 2rem 0;
+}
+
+.dialog-actions {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.action-button-left {
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.action-button-right {
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+
+.button-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 1rem;
+    min-width: 4rem;
+}
+
+.text-cancel, .text-home {
+    text-transform: uppercase;
+    font-weight: bold;
+}

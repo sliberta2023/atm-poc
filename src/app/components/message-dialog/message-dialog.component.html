@@ -1,0 +1,22 @@
+<div class="dialog">
+    <div class="dialog-title">
+        {{ data?.title }}
+    </div>
+    <div class="dialog-message">
+        {{ data?.message }}
+    </div>
+    <div class="dialog-actions">
+        <button mat-icon-button aria-label="cancel icon" (click)="onCancel()">
+            <div class="button-text">
+                <mat-icon class="icon-cancel">close</mat-icon>
+                <span class="text-cancel">Cancel</span>
+            </div>
+        </button>
+        <button mat-icon-button aria-label="home icon" (click)="onGotoHomePage()">
+            <div class="button-text">
+                <mat-icon class="icon-home">home</mat-icon>
+                <span class="text-home">Home</span>
+            </div>
+        </button>
+    </div>
+</div>

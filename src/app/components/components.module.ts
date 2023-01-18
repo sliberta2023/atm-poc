@@ -1,8 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverviewComponent } from "./overview/overview.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { RestockComponent } from "./restock/restock.component";
@@ -10,6 +7,7 @@ import { WithdrawComponent } from "./withdraw/withdraw.component";
 import { MaterialSharedModule } from "../materials.module";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MessageDialogComponent } from './message-dialog/message-dialog.component';
 
 const components = [
     PageNotFoundComponent,
@@ -22,7 +20,8 @@ const components = [
     declarations: [
         ...components,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        MessageDialogComponent
     ],
     imports: [
         CommonModule,

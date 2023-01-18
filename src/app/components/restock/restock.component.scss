@@ -31,18 +31,19 @@
 }
 
 .restock-title {
+    position: relative;
     text-transform: capitalize;
     text-decoration: underline;
     font-size: 2rem;
     font-weight: bolder;
     margin: 1rem 1rem 2rem 1rem;
     text-align: center;
-    position: relative;
 }
 
 .restock-form-wrapper {
-    border: 1px solid black;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .restock-form {
@@ -53,27 +54,61 @@
 .restock-form-field {
     font-size: 1.2rem;
     padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.restock-form-field-error {
+    font-size: 0.8rem;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    min-height: 2rem;;
+}
+
+.total-amount-text {
+    align-items: center;
+    padding: 1rem;
+}
+
+.total-amount-value {
+    padding: 1rem;
+}
+
+.actions {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.action-button-left {
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.action-button-right {
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+
+.button-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 6rem;
+}
+
+.text-back, .text-deposit {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem 0.5rem;
 }
 
 .button-back, .button-deposit {
     min-height: 4rem;
     min-width: 8rem;
     margin: 1rem;
-}
-
-.total-amount {
-    font-weight: bold;
-    text-align: right;
-    text-decoration: underline;
-    text-align: right;
-    display: flex;
-}
-
-.total-amount-value {
-    padding: 1rem;
-    margin-left: 10rem;
-}
-
-.actions {
-    position: relative;
 }
