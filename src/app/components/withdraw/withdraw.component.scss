@@ -31,7 +31,7 @@
 }
 
 .withdraw-title {
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-decoration: underline;
   font-size: 2rem;
   font-weight: bolder;
@@ -54,6 +54,11 @@
 .withdraw-form-field {
   font-size: 1.2rem;
   padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.withdraw-form-field-error {
+  font-size: 0.8rem;
 }
 
 .button-back, .button-withdraw {

@@ -26,10 +26,7 @@ export class OverviewComponent implements OnInit {
     private readonly router: Router) { }
 
   ngOnInit(): void {
-    // this.dataSource = this.getDataSource();
     this.atmService.getMoneyReserve().subscribe((valuesMap: Map<number, number>) => {
-      console.log('Updating data source...');
-      console.log({valuesMap});
       this.updateDataSource(valuesMap);
     });
   }
@@ -59,7 +56,7 @@ export class OverviewComponent implements OnInit {
     return dataSource;
   }
 
-  updateDataSource(valuesMap: Map<BillType, number>): void {
+  updateDataSource(valuesMap: Map<number, number>): void {
     const formControlNames = [
       'formControlOne', 'formControlFive', 'formControlTen',
       'formControlTwenty', 'formControlFifty', 'formControlHundred'
@@ -86,12 +83,10 @@ export class OverviewComponent implements OnInit {
   }
 
   onRestock(): void {
-    console.log('Restocking...');
     this.router.navigate(['./restock']);
   }
 
   onWithdraw(): void {
-    console.log('Withdrawing...');
     this.router.navigate(['./withdraw']);
   }
 

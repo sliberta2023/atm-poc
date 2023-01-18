@@ -2,7 +2,7 @@
 <main class="main">
     <div class="withdraw-content">
         <div class="withdraw-title">
-            Deposit Form
+            Withdraw Form
         </div>
         <div class="withdraw-form-wrapper">
             <form class="withdraw-form" [formGroup]="reserveForm">
@@ -10,41 +10,96 @@
                     <mat-label> $1 </mat-label>
                     <input type="number" matInput formControlName="one"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('one')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('one')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('one')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('one')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="withdraw-form-field">
                     <mat-label> $5 </mat-label>
                     <input type="number" matInput formControlName="five"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('five')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('five')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('five')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('five')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="withdraw-form-field">
                     <mat-label> $10 </mat-label>
                     <input type="number" matInput formControlName="ten"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('ten')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('ten')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('ten')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('ten')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="withdraw-form-field">
                     <mat-label> $20 </mat-label>
                     <input type="number" matInput formControlName="twenty"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('twenty')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('twenty')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('twenty')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('twenty')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
+                    
                 </mat-form-field>
                 <mat-form-field class="withdraw-form-field">
                     <mat-label> $50 </mat-label>
                     <input type="number" matInput formControlName="fifty"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('fifty')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('fifty')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('fifty')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('fifty')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="withdraw-form-field">
                     <mat-label> $100 </mat-label>
                     <input type="number" matInput formControlName="hundred"
                             placeholder="1">
+                    <mat-error *ngIf="this.reserveForm.get('hundred')?.hasError('min')" class="withdraw-form-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('hundred')?.hasError('max')" class="withdraw-form-field-error">
+                        {{ 'Value should not be greater than (' + this.reserveForm.get('hundred')?.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.reserveForm.get('hundred')?.hasError('required')" class="withdraw-form-field-error">
+                        Value is required.
+                    </mat-error>
                 </mat-form-field>
             </form>
         </div>
         <div class="total-amount">
             <div class="current-amount">
                 <div class="balance-title">
-                    Your balance:
+                    Current balance:
                 </div>
                 <div class="balance-amount">
-                    {{ currentAmount | currency }}
+                    {{ currentBalance$ | async | currency }}
                 </div>
             </div>
             <div class="withdraw-amount">

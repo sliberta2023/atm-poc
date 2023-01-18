@@ -19,7 +19,6 @@ export class AtmService {
         this.BillTypes.forEach(billType => {
             this.moneyReserve.set(billType, 10);
         });
-        console.log({moneyReserve: this.moneyReserve});
         this.moneyReserve$.next(this.moneyReserve);
     }
 
@@ -30,7 +29,6 @@ export class AtmService {
     }
 
     depositAll(units: TransactionUnit[]): void {
-        console.log({units});
         let amount = 0;
         units.forEach(unit => {
             amount = this.moneyReserve.get(unit.type) || 0;
@@ -43,19 +41,17 @@ export class AtmService {
         return this.moneyReserve.get(billType) || 0;
     }
 
-    withdraw(unit: TransactionUnit): number {
-        let currentAmount = this.moneyReserve.get(unit.type) || 0;
-        const requestedAmount = unit.amount;
-        if (currentAmount >= requestedAmount) {
-            currentAmount = currentAmount - requestedAmount;
-            this.moneyReserve.set(unit.type, currentAmount);
-
-            return requestedAmount;
-        }
+    withdraw(units: TransactionUnit[]): void {
+        units.forEach(unit => {
+            let currentAmount = this.moneyReserve.get(unit.type) || 0;
+            const requestedAmount = unit.amount;
+            if (currentAmount >= requestedAmount) {
+                currentAmount = currentAmount - requestedAmount;
+                this.moneyReserve.set(unit.type, currentAmount);
+            }
+        });
 
         this.moneyReserve$.next(this.moneyReserve);
-
-        return 0;
     }
 
     getMoneyReserve(): Observable<Map<BillType, number>> {

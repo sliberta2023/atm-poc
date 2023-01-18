@@ -96,7 +96,6 @@ export class RestockComponent implements OnInit {
   }
 
   onBack(): void {
-    console.log('Going back...');
     this.router.navigate(['./overview']);
   }
 
