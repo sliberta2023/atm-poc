@@ -10,7 +10,7 @@
   border: 1px solid black;
   border-radius: 1rem;
   width: fit-content;
-  min-width: 352px;
+  min-width: 32rem;
   min-height: 60vh;
 }
 
@@ -32,10 +32,9 @@
 
 .withdraw-title {
   text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bolder;
-  margin: 1rem 1rem 2rem 1rem;
+  margin: 0.5rem;
   text-align: center;
 }
 
@@ -92,7 +91,7 @@
   position: relative;
   display: flex;
   justify-content: space-around;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .action-button-left {

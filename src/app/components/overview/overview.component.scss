@@ -9,6 +9,7 @@
     border-radius: 1rem;
     width: fit-content;
     min-height: 60vh;
+    min-width: 30rem;
 }
 
 .overview-content::before {
@@ -83,7 +84,7 @@
 }
 
 table.mat-table {
-    min-width: 20rem;
+    min-width: 30rem;
     min-height: 50vh;
     font-weight: bold;
 }

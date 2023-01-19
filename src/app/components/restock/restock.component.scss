@@ -10,7 +10,7 @@
     border: 1px solid black;
     border-radius: 1rem;
     width: fit-content;
-    min-width: 352px;
+    min-width: 32rem;
     min-height: 60vh;
 }
 
@@ -34,9 +34,9 @@
     position: relative;
     text-transform: capitalize;
     text-decoration: underline;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bolder;
-    margin: 1rem 1rem 2rem 1rem;
+    margin: 0.5rem;
     text-align: center;
 }
 
@@ -65,16 +65,16 @@
     display: flex;
     justify-content: space-around;
     font-weight: bold;
-    min-height: 2rem;;
+    min-height: 1rem;;
 }
 
 .total-amount-text {
     align-items: center;
-    padding: 1rem;
+    padding: 0 0.5rem;
 }
 
 .total-amount-value {
-    padding: 1rem;
+    padding: 0 0.5rem;
 }
 
 .actions {
