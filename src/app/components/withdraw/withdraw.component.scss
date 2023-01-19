@@ -22,7 +22,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/images/dollar-bills.jpg');
+  // background-image: url('/assets/images/dollar-bills.jpg');
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -42,6 +42,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  margin-left: -10rem;
 }
 
 .withdraw-form {
