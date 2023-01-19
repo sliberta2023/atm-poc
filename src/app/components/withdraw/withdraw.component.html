@@ -4,6 +4,24 @@
         <div class="withdraw-title">
             Withdraw Form
         </div>
+        <div class="request-input">
+            <form>
+                <mat-form-field class="request-input-field">
+                    <mat-label> Requested Amount: </mat-label>
+                    <input type="number" matInput [formControl]="requestInputControl"
+                            placeholder="1" (change)="onRequestInputUpdate($event)">
+                    <mat-error *ngIf="this.requestInputControl.hasError('greaterThan')" class="request-input-field-error">
+                        Value has to be non-negative number.
+                    </mat-error>
+                    <mat-error *ngIf="this.requestInputControl.hasError('max')" class="request-input-field-error">
+                        {{ 'Value should not be greater than (' + this.requestInputControl.getError('max')?.max + ').'}}
+                    </mat-error>
+                    <mat-error *ngIf="this.requestInputControl.hasError('required')" class="request-input-field-error">
+                        Value is required.
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
         <div class="withdraw-form-wrapper">
             <form class="withdraw-form" [formGroup]="reserveForm">
                 <mat-form-field class="withdraw-form-field">
