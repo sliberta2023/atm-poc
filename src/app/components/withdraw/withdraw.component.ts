@@ -1,18 +1,29 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { MaterialSharedModule } from 'src/app/materials.module';
 import { BillType } from 'src/app/models/bill-type';
 import { DialogMessageData } from 'src/app/models/dialog-message-type';
 import { TransactionUnit } from 'src/app/models/transaction-unit';
 import { AtmService } from 'src/app/services/atm.service';
+import { ComponentsModule } from '../components.module';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 
 @Component({
+  standalone: true,
   selector: 'app-withdraw',
   templateUrl: './withdraw.component.html',
-  styleUrls: ['./withdraw.component.scss']
+  styleUrls: ['./withdraw.component.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialSharedModule,
+    ComponentsModule
+  ]
 })
 export class WithdrawComponent implements OnInit {
   readonly formControlNames = ['one', 'five', 'ten', 'twenty', 'fifty', 'hundred'];

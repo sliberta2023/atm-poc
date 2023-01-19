@@ -18,11 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'withdraw',
-    component: WithdrawComponent
+    loadComponent: () => import('./components/withdraw/withdraw.component').then(m => m.WithdrawComponent) 
   },
   {
     path: 'restock',
-    component: RestockComponent
+    loadComponent: () => import('./components/restock/restock.component').then(m => m.RestockComponent)
   },
   {
     path: '**',

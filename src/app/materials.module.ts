@@ -1,6 +1,4 @@
 import { NgModule } from "@angular/core";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { DialogModule } from "@angular/cdk/dialog";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -13,9 +11,6 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 
 @NgModule({
     exports: [
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
         MatCardModule,
         DialogModule,
         MatDialogModule,

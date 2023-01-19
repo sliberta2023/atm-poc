@@ -74,7 +74,7 @@
 
 .current-amount, .withdraw-amount {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .balance-title, .requested-title {

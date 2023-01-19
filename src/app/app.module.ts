@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AtmService } from './services/atm.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    ComponentsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    CommonModule,
+    ComponentsModule
   ],
   providers: [AtmService],
   bootstrap: [AppComponent]
