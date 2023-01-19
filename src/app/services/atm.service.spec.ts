@@ -22,17 +22,18 @@ describe('AtmService', () => {
   });
 
   it('should be able to withdraw the amount', () => {
-    const billType = BillType.ONE;
+    const billType = 1;
     const expectedAmount = 5;
     const depositUnit: TransactionUnit = {type: billType, amount: 5};
-    atmService.withdraw(depositUnit);
+    atmService.withdraw([depositUnit]);
     expect(atmService.getAmount(billType)).toBe(expectedAmount);
   });
 
-  it('should be able to return 0 if requested amount is greater than the reserved money', () => {
-    const billType = BillType.ONE;
-    const expectedAmount = 0;
+  it('should ignore processing if requested amount is greater than the reserved money', () => {
+    const billType = 1;
+    const expectedAmount = 10;
     const withdrawUnit: TransactionUnit = {type: billType, amount: 25};
-    expect(atmService.withdraw(withdrawUnit)).toBe(expectedAmount);
+    atmService.withdraw([withdrawUnit])
+    expect(atmService.getAmount(billType)).toBe(expectedAmount);
   });
 });

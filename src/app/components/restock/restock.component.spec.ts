@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MaterialSharedModule } from 'src/app/materials.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RestockComponent } from './restock.component';
 
@@ -9,8 +9,11 @@ describe('RestockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MaterialSharedModule],
-      declarations: [ RestockComponent ]
+      imports: [
+        BrowserAnimationsModule,
+        RestockComponent
+      ],
+      providers: [ ]
     })
     .compileComponents();
 

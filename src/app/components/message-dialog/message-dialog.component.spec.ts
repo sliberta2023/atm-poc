@@ -1,6 +1,12 @@
+import { Dialog } from '@angular/cdk/dialog';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MaterialSharedModule } from 'src/app/materials.module';
 
 import { MessageDialogComponent } from './message-dialog.component';
+
+const dummyValue = null as any;
+const data = new Dialog(dummyValue, dummyValue , dummyValue, dummyValue, dummyValue, dummyValue);
 
 describe('MessageDialogComponent', () => {
   let component: MessageDialogComponent;
@@ -8,7 +14,14 @@ describe('MessageDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MessageDialogComponent ]
+      imports: [ MaterialSharedModule],
+      declarations: [
+        MessageDialogComponent
+      ],
+      providers: [
+        {provide: MatDialogRef, useValue: {}},
+        {provide: MAT_DIALOG_DATA, useValue: data}
+      ]
     })
     .compileComponents();
 
