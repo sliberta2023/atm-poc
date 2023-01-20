@@ -10,6 +10,7 @@ This is a sample ATM project in Angular & Material 14 with minimal requirements.
 3. [Technical Details](#technical-details)
     1. [Flow Chart](#flow-chart)
     2. [Development Insights](#development-insights)
+4. [Next Iterations](#next-iterations)
 ## Application Requirements:
 
 ·       The ATM should initially be stocked with 10 of each of the following denominations: $100, $50, $20, $10, $5, $1.
@@ -51,9 +52,13 @@ Display a transaction history of withdraw messages (“Dispensed $<amount>” or
 
 If your Material Components doesn't seem working, mostly it's version incompatibility.
 
-By default npm installs Material version 6 if you didn't specify version. You don't need to separately install Material as it's already included in package.json, but if you need to for some reason, it should be version 14.
+By default npm may installs another version of Material, if you didn't specify version. You don't need to separately install Material as it's already included in package.json, but if you need to do so for some reason, it should be version 14.
 
 ```
 ng add @angular/material@14
 ```
 
+## Next Iterations
+    Add transactions logs
+    create a shared scss classes to consistently style all the pages
+    apply templates to reduce the redunduncy in all the html pages
