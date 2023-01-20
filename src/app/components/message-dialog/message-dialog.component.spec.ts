@@ -1,7 +1,7 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MaterialSharedModule } from 'src/app/materials.module';
+import { MaterialSharedModule } from '../../materials.module';
 
 import { MessageDialogComponent } from './message-dialog.component';
 

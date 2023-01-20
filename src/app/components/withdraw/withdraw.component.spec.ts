@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialSharedModule } from 'src/app/materials.module';
-
 import { WithdrawComponent } from './withdraw.component';
 
 describe('WithdrawComponent', () => {

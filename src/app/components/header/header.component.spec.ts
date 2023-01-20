@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MaterialSharedModule } from 'src/app/materials.module';
+import { MaterialSharedModule } from '../../materials.module';
 
 import { HeaderComponent } from './header.component';
 

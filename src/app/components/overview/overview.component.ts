@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { BillType } from 'src/app/models/bill-type';
-import { AtmService } from 'src/app/services/atm.service';
+import { BillType } from '../../models/bill-type';
+import { AtmService } from '../../services/atm.service';
 
 interface MoneyUnit {
   billType: BillType;

@@ -2,18 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialog } from "@angular/material/dialog";
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { MaterialSharedModule } from 'src/app/materials.module';
-import { BillType } from 'src/app/models/bill-type';
-import { DialogMessageData } from 'src/app/models/dialog-message-type';
-import { TransactionUnit } from 'src/app/models/transaction-unit';
-import { AtmService } from 'src/app/services/atm.service';
+import { MaterialSharedModule } from '../../materials.module';
+import { BillType } from '../../models/bill-type';
+import { DialogMessageData } from '../../models/dialog-message-type';
+import { TransactionUnit } from '../../models/transaction-unit';
+import { AtmService } from '../../services/atm.service';
 import { ComponentsModule } from '../components.module';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 
 @Component({
