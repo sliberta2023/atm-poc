@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BetaNxt-ATM": {
+    "ATM-POC": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/beta-nxt-atm",
+            "outputPath": "dist/atm-poc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BetaNxt-ATM:build:production"
+              "browserTarget": "ATM-POC:build:production"
             },
             "development": {
-              "browserTarget": "BetaNxt-ATM:build:development"
+              "browserTarget": "ATM-POC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BetaNxt-ATM:build"
+            "browserTarget": "ATM-POC:build"
           }
         },
         "test": {

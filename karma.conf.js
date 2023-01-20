@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/beta-nxt-atm'),
+      dir: require('path').join(__dirname, './coverage/atm-poc'),
       subdir: '.',
       reporters: [
         { type: 'html' },
