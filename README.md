@@ -52,7 +52,7 @@ Display a transaction history of withdraw messages (“Dispensed $<amount>” or
 
 If your Material Components doesn't seem working, mostly it's version incompatibility.
 
-By default npm may installs another version of Material, if you didn't specify version. You don't need to separately install Material as it's already included in package.json, but if you need to do so for some reason, it should be version 14.
+By default npm may install another version of Material, if you didn't specify version. You don't need to separately install Material as it's already included in package.json, but if you need to do so for some reason, it should be version 14.
 
 ```
 ng add @angular/material@14
